@@ -42,7 +42,7 @@ export async function getUsers(page: number): Promise<GetUsersResponse> {
 
 export function useUsers(page: number) {
     return useQuery(["users", page], () => getUsers(page), {
-        staleTime: 1000 * 5 // durante 5 segundos os dados estão atualizados, não vai dar refresh
+        staleTime: 1000 * 60 * 10 // durante 10 minutos os dados estão atualizados, não vai dar refresh
     })
 
 }
